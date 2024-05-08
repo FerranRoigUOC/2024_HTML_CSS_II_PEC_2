@@ -1,0 +1,121 @@
+
+//portada
+.main-page {
+  display: flex;
+  flex-direction: column;
+  container-type: inline-size;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .text {
+    padding-left: 1em;
+    padding-right: 1.5em;
+    text-align: center;
+
+    @container (min-width: 42em) {
+      text-align: start;
+    }
+  }
+  
+  .image-title {
+    padding-left: 2em;
+    font-size: calc(1em + 1vw);
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: center;
+    color: $title-color;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .horizontal-subtitle {
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-weight: bold;
+    font-size: calc(1em + 0.5vw);
+    text-align: center;
+  }
+  
+  .poster-button {
+    position: initial;
+    border: 0;
+    background-color: $title-color;
+    color: white;
+    text-transform: uppercase;
+    font-size: 100%;
+    padding: 1em 2em;
+    right: 1em;
+    bottom: 1em;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    span {
+      margin-left: 5px;
+    }
+  }
+  
+  .image-footer {
+    text-align: center;
+    margin: auto;
+  }
+}
+
+@supports (display:grid) {
+  @media (min-width: 42em) and (min-height: 27em) {
+    .main-page {
+      max-width: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr calc(2em + 0.5vw);
+      grid-template-rows: 30vh 30vh 25vh 15vh;
+
+      img {
+        grid-column: 1 / 3;
+        grid-row: 1 / 4;
+      }
+      
+      .text {
+        grid-column: 3 / 5;
+        grid-row: 2 / 4;
+      }
+      
+      .image-title {
+        grid-column: 2 / 4;
+        grid-row: 1 / 4;
+        z-index: 2;
+        text-align: left;
+        margin-top: 10px;
+      }
+      
+      .horizontal-subtitle {
+        grid-column: 5 / 6;
+        grid-row: 2 / 4;
+        writing-mode: vertical-rl;
+      }
+      
+      .poster-button {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+        position: initial;
+        padding: 0;
+        margin: 20px;
+      }
+      
+      .image-footer {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+      }
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,23 @@
+
+.main-third-page {
+  flex-grow: 1;
+
+  .card {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;;
+    margin-bottom: 20px;
+    padding: 20px;
+    container-type: inline-size;
+  }
+
+  .card-text, .form-text, .card-title {
+    text-align: center;
+
+    @container (min-width: 42em) {
+      text-align: start;
+    }
+  }
+  
+}
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
+    <title>UOC Boilerplate</title>
+  </head>
+  <body>
+    <include src="./views/header.html"></include>
+
+    <main class="main-third-page">
+      <div class="card w-75">
+        <div class="card-body">
+          <h5 class="card-title">Formulari de contacte</h5>
+          <p class="card-text">T'enviarem un correu electrònic amb les respostes als teus dubtes</p>
+
+          <div class="form-container">
+            <form name="contact" method="POST" netlify>
+              <div class="row g-2 mb-3">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="name">
+                    <label for="name">Nom</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="surnames">
+                    <label for="surnames">Cognoms</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+                <div id="nom" class="form-text">Mai compartirem el teu correu electrònic amb ningú més.</div>
+              </div>
+              <div class="mb-3 col-md">
+                <div class="form-floating">
+                  <select class="form-select" id="reason" aria-label="reason">
+                    <option selected value="join">Apuntar-se al concurs</option>
+                    <option value="doubts">Dubtes</option>
+                    <option value="other">Altres</option>
+                  </select>
+                  <label for="reason">Motiu</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>      
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+  </body>
+</html>
